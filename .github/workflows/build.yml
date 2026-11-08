@@ -1,0 +1,31 @@
+name: Build mod
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: emerald-scout-0.2.0-com-workflow/emerald-scout-0.2.0-source
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: 8.12
+
+      - name: Build
+        run: gradle build --no-daemon
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: emerald-scout-jar
+          path: emerald-scout-0.2.0-com-workflow/emerald-scout-0.2.0-source/build/libs/emerald-scout-0.2.0.jar
