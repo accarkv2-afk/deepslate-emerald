@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "br.emeraldscout.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "ChunkGeneratorAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

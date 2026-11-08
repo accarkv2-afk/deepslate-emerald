@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "emeraldscout",
+  "version": "${version}",
+  "name": "EmeraldScout",
+  "description": "Minecraft 1.21.1 Fabric manual-seed vanilla ore_emerald placement replay and candidate Block ESP for the default Overworld profile.",
+  "environment": "client",
+  "mixins": ["emeraldscout.mixins.json"],
+  "entrypoints": {
+    "client": [
+      "br.emeraldscout.EmeraldScoutClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.10",
+    "minecraft": "1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
